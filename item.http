@@ -1,0 +1,98 @@
+### Variables
+@server = http://localhost:9000
+
+### --------starting of item- create, view and update.-----------
+### Create
+POST {{server}}/item
+Content-Type: application/json
+
+{
+   "itemName": "mouse",
+   "itemPrice":"100"
+}
+
+### All View
+GET {{server}}/item
+Content-Type: application/json
+
+### Single Update
+PATCH {{server}}/item/60b79424e0c07307e8473a18
+Content-Type: application/json
+
+{  
+   "itemPrice":"90"
+}
+### -----End here----
+
+### --------starting of Vehicle - create, view and update.-----------
+### Create
+POST {{server}}/vehicle
+Content-Type: application/json
+
+{
+   "reg_Num": "WB22290076",
+   "city":"Kolkata"
+}
+
+### View All
+GET {{server}}/vehicle
+Content-Type: application/json
+
+
+### Update
+PATCH {{server}}/vehicle
+Content-Type: application/json
+
+{  
+   "reg_Num":"",
+   "Veh_Type":"",
+   "city":"",
+   "Active_order":""
+}
+### -----End here----
+
+### --------starting of client- create, view and update.-----------
+### Create
+POST {{server}}/customers
+Content-Type: application/json
+
+{
+   "CustName":"Swarnav",
+   "CustCity":"banglore"
+}
+
+### View All
+GET {{server}}/customers
+Content-Type: application/json
+
+### Update
+PATCH {{server}}/custommers/60b76c21077da832185f2f6f
+Content-Type: application/json
+
+{
+   "CustName":"Swarnav"
+}
+### -----End here----
+
+### --------starting of Order- create, view .-----------
+### Create
+POST {{server}}/order
+Content-Type: application/json
+
+{
+  "customerId": "60b919c0d92f662f88590229",
+  "itemId": "60b917ddd92f662f88590227",
+  "itemPrice": 100,
+}
+
+### Order View
+GET {{server}}/order
+Content-Type: application/json
+
+### Vehicle Availablity Check
+GET {{server}}/order/1/available-vehicle
+Content-Type: application/json
+
+### Item Delivery status
+PATCH {{server}}/vehicle/WB22290076/order/1
+Content-Type: application/json
